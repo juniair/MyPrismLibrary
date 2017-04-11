@@ -81,8 +81,12 @@ namespace TTImageProsessingLibrary
             Encoder = new PngBitmapEncoder();
 
             LoopCount = UNKNOWN_LOOP_COUNT;
+            LoopState = "Loop State : ";
+            FrameName = "Frmae Name : ";
+            FrameDuration = "Frame Duration : ";
         }
 
+        #region MainImageProsessing
         private byte[] input;
         public byte[] Input
         {
@@ -404,7 +408,9 @@ namespace TTImageProsessingLibrary
             }
             return img.Height;
         }
+        #endregion
 
+        #region SplitGIF 에서 처리 되는 메소드
         private void AnimatedImageSplit()
         {
             if (!FileDialog.FileName.Equals(""))
@@ -504,6 +510,7 @@ namespace TTImageProsessingLibrary
                     LoopCount = -1;
                 }
             }
+
         }
 
 
@@ -565,8 +572,61 @@ namespace TTImageProsessingLibrary
                     });
                 }
             }
+
+            if(LoopCount > 0)
+            {
+                LoopState = string.Format("LoopState : {0}회 반복", LoopCount);
+            }
+            else if (LoopCount == 0)
+            {
+                LoopState = "LoopState : 무한 반복";
+            }
+            else if(LoopCount == -1)
+            {
+                LoopState = "LoopState : 일반 이미지";
+            }
+            else
+            {
+
+            }
+        }
+        #endregion
+
+
+        private string loopState;
+        public string LoopState
+        {
+            get { return loopState; }
+            set { SetProperty(ref loopState, value); }
         }
 
+        private string frameName;
+        public string FrameName
+        {
+            get { return frameName; }
+            set { SetProperty(ref frameName, value); }
+        }
+
+        private string frameDuration;
+        public string FrameDuration
+        {
+            get { return frameDuration; }
+            set { SetProperty(ref frameDuration, value); }
+        }
+
+        public void OnItemSelected(object[] selectedItems)
+        {
+            if (selectedItems != null && selectedItems.Length > 0)
+            {
+                FrameFile frame = selectedItems.FirstOrDefault() as FrameFile;
+                if (frame != null)
+                {
+                    FrameName = string.Format("FramenName : {0}", frame.Name);
+                    FrameDuration = string.Format("FramenDuration : {0} ms", frame.Duration);
+
+                }
+            }
+        }
     }
 
 }

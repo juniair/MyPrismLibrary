@@ -1,0 +1,5 @@
+D:\Github\AnimateGifSplitListApp\ImageProsessingApp\ImageProsessingApp.infra\bin\Debug\ImageProsessingApp.infra.dll
+D:\Github\AnimateGifSplitListApp\ImageProsessingApp\ImageProsessingApp.infra\bin\Debug\ImageProsessingApp.infra.pdb
+D:\Github\AnimateGifSplitListApp\ImageProsessingApp\ImageProsessingApp.infra\obj\Debug\ImageProsessingApp.infra.csprojResolveAssemblyReference.cache
+D:\Github\AnimateGifSplitListApp\ImageProsessingApp\ImageProsessingApp.infra\obj\Debug\ImageProsessingApp.infra.dll
+D:\Github\AnimateGifSplitListApp\ImageProsessingApp\ImageProsessingApp.infra\obj\Debug\ImageProsessingApp.infra.pdb

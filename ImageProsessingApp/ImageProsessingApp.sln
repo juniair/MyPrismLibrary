@@ -1,0 +1,52 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImageProsessingApp", "ImageProsessingApp\ImageProsessingApp.csproj", "{99C9E82C-C594-446D-AA59-8FFBC43AD226}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImageProsessingApp.infra", "ImageProsessingApp.infra\ImageProsessingApp.infra.csproj", "{A9469A41-A599-4320-93B9-D75D1ACA37DF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImageProsessingApp.CanvasModule", "ImageProsessingApp.CanvasModule\ImageProsessingApp.CanvasModule.csproj", "{52451124-FAE0-4FE1-9E88-0CE6BBE7509F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImageProsessingApp.ButtonModule", "ImageProsessingApp.ButtonModule\ImageProsessingApp.ButtonModule.csproj", "{01E5E9DD-9BEF-4375-BD04-D4131CDD27F2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImageProsessingApp.FrameListModule", "ImageProsessingApp.FrameListModule\ImageProsessingApp.FrameListModule.csproj", "{ADEBFC85-C6C8-4916-893A-1DD394512626}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImageProsessingApp.FrameInfoModule", "ImageProsessingApp.FrameInfoModule\ImageProsessingApp.FrameInfoModule.csproj", "{6EE746D7-EFF4-4F94-98F0-37BBD88A9D9D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{99C9E82C-C594-446D-AA59-8FFBC43AD226}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{99C9E82C-C594-446D-AA59-8FFBC43AD226}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{99C9E82C-C594-446D-AA59-8FFBC43AD226}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{99C9E82C-C594-446D-AA59-8FFBC43AD226}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A9469A41-A599-4320-93B9-D75D1ACA37DF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A9469A41-A599-4320-93B9-D75D1ACA37DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A9469A41-A599-4320-93B9-D75D1ACA37DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A9469A41-A599-4320-93B9-D75D1ACA37DF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{52451124-FAE0-4FE1-9E88-0CE6BBE7509F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{52451124-FAE0-4FE1-9E88-0CE6BBE7509F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{52451124-FAE0-4FE1-9E88-0CE6BBE7509F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{52451124-FAE0-4FE1-9E88-0CE6BBE7509F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{01E5E9DD-9BEF-4375-BD04-D4131CDD27F2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{01E5E9DD-9BEF-4375-BD04-D4131CDD27F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{01E5E9DD-9BEF-4375-BD04-D4131CDD27F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{01E5E9DD-9BEF-4375-BD04-D4131CDD27F2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ADEBFC85-C6C8-4916-893A-1DD394512626}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ADEBFC85-C6C8-4916-893A-1DD394512626}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ADEBFC85-C6C8-4916-893A-1DD394512626}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ADEBFC85-C6C8-4916-893A-1DD394512626}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6EE746D7-EFF4-4F94-98F0-37BBD88A9D9D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6EE746D7-EFF4-4F94-98F0-37BBD88A9D9D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6EE746D7-EFF4-4F94-98F0-37BBD88A9D9D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6EE746D7-EFF4-4F94-98F0-37BBD88A9D9D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

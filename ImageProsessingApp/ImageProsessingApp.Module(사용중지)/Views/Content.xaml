@@ -1,0 +1,98 @@
+﻿<UserControl x:Class="ImageProsessingApp.Module.Views.Content"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+             xmlns:prism="http://prismlibrary.com/"      
+             prism:ViewModelLocator.AutoWireViewModel="True">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="650*"/>
+            <RowDefinition Height="70*"/>
+            <RowDefinition Height="10*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1024*"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+        <Canvas Grid.Row="0" Grid.Column="0">
+            <Rectangle Canvas.Left="{Binding Prosessor.Rec.X}" Canvas.Top="{Binding Prosessor.Rec.Y}" Width="{Binding Prosessor.Rec.Width}" Height="{Binding Prosessor.Rec.Height}" Stroke="Blue"/>
+            <Image Source="{Binding Prosessor.Input}" Canvas.Left="{Binding Prosessor.Rec.X}" Canvas.Top="{Binding Prosessor.Rec.Y}" Width="{Binding Prosessor.Rec.Width}" Height="{Binding Prosessor.Rec.Height}" />
+        </Canvas>
+        <StackPanel Grid.Row="0" Grid.Column="1">
+            <Button Content="불러오기" Command="{Binding LoadImageCommand}" Margin="0,0,0,2" />
+            <Button Content="불러오기(psd file)" Command="{Binding LoadImageCommand}" Margin="0,0,0,2" />
+            <Button Content="저장하기" Command="{Binding SaveImageCommand}" Margin="0,0,0,20"/>
+            <Grid Margin="0,0,0,2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                </Grid.RowDefinitions>
+                <Label Grid.Row="0" Grid.Column="0" Content="X좌표"/>
+                <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding Prosessor.X}" />
+                <Label Grid.Row="0" Grid.Column="2" Content="Y좌표"/>
+                <TextBox Grid.Row="0" Grid.Column="3" Text="{Binding Prosessor.Y}" />
+                <Label Grid.Row="1" Grid.Column="0" Content="가로"/>
+                <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding Prosessor.W}" />
+                <Label Grid.Row="1" Grid.Column="2" Content="세로"/>
+                <TextBox Grid.Row="1" Grid.Column="3" Text="{Binding Prosessor.H}" />
+            </Grid>
+            <Button Content="사이즈 변경하기(비율유지)" Command="{Binding ResizeImageCommand}" CommandParameter="max" Margin="0,0,0,2"/>
+            <Button Content="사이즈 변경하기" Command="{Binding ResizeImageCommand}" CommandParameter="stretch" Margin="0,0,0,2"/>
+            <Button Content="자르기" Command="{Binding CropImageCommand}" Margin="0,0,0,2"/>
+            <Button Content="투명한 부분 자르기" Command="{Binding CropTransparentImageCommand}" Margin="0,0,0,2"/>
+            <Button Content="합치기" Command="{Binding MergeImageCommand}" Margin="0,0,0,2"/>
+            <Button Content="GIF 파일 분리하기 " Command="{Binding SplitGifCommand}" Margin="0,0,0,2"/>
+        </StackPanel>
+        <ListView ItemsSource="{Binding Prosessor.ImageFile.FrameList}" Grid.Row="1" Grid.ColumnSpan="2">
+            <i:Interaction.Triggers>
+                <!-- This event trigger will execute the action when the corresponding event is raised by the ListBox. -->
+                <i:EventTrigger EventName="SelectionChanged">
+                    <!-- This action will invoke the selected command in the view model and pass the parameters of the event to it. -->
+                    <prism:InvokeCommandAction Command="{Binding SelectedCommand}" TriggerParameterPath="AddedItems" />
+                </i:EventTrigger>
+            </i:Interaction.Triggers>
+            
+            <ListView.ItemContainerStyle>
+                <Style TargetType="ListViewItem">
+                    <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+                </Style>
+            </ListView.ItemContainerStyle>
+            <ListView.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <StackPanel Orientation="Horizontal" />
+                </ItemsPanelTemplate>
+            </ListView.ItemsPanel>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Border BorderBrush="#CCCCCC" BorderThickness="1">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="1*"/>
+                                <RowDefinition Height="1*"/>
+                                <RowDefinition Height="1*"/>
+                            </Grid.RowDefinitions>
+
+                            <Image Source="{Binding Source}"/>
+                            <Label Content="{Binding Name}" FontSize="14" Grid.Row="1" FontWeight="Bold"/>
+                            <StackPanel  Grid.Row="2" Orientation="Horizontal">
+                                <Label Content="{Binding Duration}"></Label>
+                                <Label Content="ms"></Label>
+                            </StackPanel>
+
+                        </Grid>
+                    </Border>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <StackPanel Orientation="Vertical" Grid.Row="2" Grid.ColumnSpan="2">
+            <Label Content="{Binding FileName}"/>
+            <Label Content="{Binding Duration}" />
+        </StackPanel>
+    </Grid>
+</UserControl>

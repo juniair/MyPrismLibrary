@@ -652,7 +652,7 @@ namespace TTImageProsessingLibrary
                             bitmap = ImageDecoder.DecodeImage(layer);
                             if(bitmap != null)
                             {
-                                imageFactory.Load(bitmap).Save(string.Format((@"{0}\{1}.jpg", FolderDialog.SelectedPath, layer.Name));
+                                imageFactory.Load(bitmap).Save(string.Format(@"{0}\{1}.jpg", FolderDialog.SelectedPath, layer.Name));
                             }
                         }
                     }

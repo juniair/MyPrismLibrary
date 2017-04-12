@@ -4,7 +4,7 @@
 library
 C#
 .cs
-D:\Github\AnimateGifSplitListApp\ImageProsessingApp\ImageProsessingApp.ButtonModule\obj\Debug\
+D:\Github\MyImageProsessingLibrary\ImageProsessingApp\ImageProsessingApp.ButtonModule\obj\Debug\
 ImageProsessingApp.ButtonModule
 none
 false
@@ -13,7 +13,7 @@ DEBUG;TRACE
 1-766469106
 
 10593815342
-71912139288
+711705460911
 Views\CommandButton.xaml;
 
 False

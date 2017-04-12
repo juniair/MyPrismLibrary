@@ -9,6 +9,7 @@ using System.Drawing.PSD;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Media.Imaging;
@@ -84,6 +85,9 @@ namespace TTImageProsessingLibrary
             LoopState = "Loop State : ";
             FrameName = "Frmae Name : ";
             FrameDuration = "Frame Duration : ";
+
+            PsdFile = new PsdFile();
+            regex = new Regex(@"(\.jpg|jpeg|gif|bmp|png|psd)", RegexOptions.IgnoreCase);
         }
 
         #region MainImageProsessing
@@ -151,14 +155,11 @@ namespace TTImageProsessingLibrary
 
             using (var imageFactory = new ImageFactory(preserveExifData: true))
             {
-                SaveFileDialog saveFileDialog1 = new SaveFileDialog();
-                saveFileDialog1.Filter = "JPeg Image|*.jpg|Bitmap Image|*.bmp|Gif Image|*.gif|PNG Image|*.png";
-                saveFileDialog1.Title = "Save an Image File";
-                saveFileDialog1.ShowDialog();
+                SaveDialog.ShowDialog();
 
-                if (saveFileDialog1.FileName != "")
+                if (SaveDialog.FileName != "")
                 {
-                    string savePath = saveFileDialog1.FileName;
+                    string savePath = SaveDialog.FileName;
                     imageFactory.Load(Input)
                     .Save(savePath);
                 }
@@ -302,20 +303,20 @@ namespace TTImageProsessingLibrary
             
             if (FileDialog.FileNames.Length > 0)
             {
-                string[] opneFileInfo = FileDialog.SafeFileName.Split('.');
+                string[] tokens = regex.Split(FileDialog.SafeFileName);
 
                 foreach (string fileName in FileDialog.FileNames)
                 {
-                    if (opneFileInfo[1].ToLower().Equals("psd"))
+                    if (tokens[1].ToLower().Equals("psd"))
                     {
-                        var psd = new PsdFile();
-                        psd.Load(fileName);
-
+                        
+                        PsdFile.Load(fileName);
+                        
                         using (Process = new MemoryStream())
                         {
                             using (var imageFactory = new ImageFactory(preserveExifData: true))
                             {
-                                Bitmap bitmap = ImageDecoder.DecodeImage(psd);
+                                Bitmap bitmap = ImageDecoder.DecodeImage(PsdFile);
                                 imageFactory.Load(bitmap)
                                     .Save(Process);
                             }
@@ -532,7 +533,8 @@ namespace TTImageProsessingLibrary
                     string frameName;
                     for (int i = 0; i < FrameCount; i++)
                     {
-                        frameName = string.Format(@"{0}_frame[{1}].{2}", FileDialog.SafeFileName.Split('.')[0], i, ImageFormat.ToString());
+                        
+                        frameName = string.Format(@"{0}_frame[{1}].{2}", regex.Split(FileDialog.SafeFileName)[0], i, ImageFormat.ToString());
                         framePath = string.Format(@"{0}\\{1}", FolderDialog.SelectedPath, frameName);
                         using (Image image = Image.FromStream(new MemoryStream(FrameStreamDataList[i])))
                         {
@@ -565,7 +567,7 @@ namespace TTImageProsessingLibrary
                 {
                     ImageFrameList.Add(new FrameFile
                     {
-                        Name = string.Format(@"{0}_frame[{1}].{2}", FileDialog.SafeFileName.Split('.')[0], i, ImageFormat.ToString()),
+                        Name = string.Format(@"{0}_frame[{1}].{2}", regex.Split(FileDialog.SafeFileName)[0], i, ImageFormat.ToString()),
                         Path = null,
                         Source = FrameStreamDataList[i],
                         Duration = FrameDelay[i],
@@ -627,6 +629,37 @@ namespace TTImageProsessingLibrary
                 }
             }
         }
+
+        private PsdFile PsdFile;
+        private Regex regex;
+
+        #region 2017-04-12 레이아웃 별 추가 메소드
+        public void SaveLayer()
+        {
+            var result = FolderDialog.ShowDialog();
+
+            if(result == DialogResult.OK)
+            {
+                string[] tokens = regex.Split(FileDialog.SafeFileName);
+
+                if(tokens[1].ToLower().Equals("psd"))
+                {
+                    using(var imageFactory = new ImageFactory(preserveExifData: true))
+                    {
+                        Bitmap bitmap;
+                        foreach (Layer layer in PsdFile.Layers)
+                        {
+                            bitmap = ImageDecoder.DecodeImage(layer);
+                            if(bitmap != null)
+                            {
+                                imageFactory.Load(bitmap).Save(string.Format((@"{0}\{1}.jpg", FolderDialog.SelectedPath, layerName));
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        #endregion
     }
 
 }

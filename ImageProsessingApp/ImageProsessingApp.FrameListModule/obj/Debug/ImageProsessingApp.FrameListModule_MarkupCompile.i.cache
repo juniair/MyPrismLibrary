@@ -4,7 +4,7 @@
 library
 C#
 .cs
-D:\Github\AnimateGifSplitListApp\ImageProsessingApp\ImageProsessingApp.FrameListModule\obj\Debug\
+D:\Github\MyImageProsessingLibrary\ImageProsessingApp\ImageProsessingApp.FrameListModule\obj\Debug\
 ImageProsessingApp.FrameListModule
 none
 false
@@ -13,7 +13,7 @@ DEBUG;TRACE
 1-933157823
 
 10-1451663889
-71912139288
+711705460911
 Views\FrameList.xaml;
 
 False

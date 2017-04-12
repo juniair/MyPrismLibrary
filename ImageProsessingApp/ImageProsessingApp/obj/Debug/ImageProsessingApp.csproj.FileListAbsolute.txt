@@ -32,3 +32,6 @@ D:\Github\AnimateGifSplitListApp\ImageProsessingApp\ImageProsessingApp\obj\Debug
 D:\Github\AnimateGifSplitListApp\ImageProsessingApp\ImageProsessingApp\obj\Debug\ImageProsessingApp.pdb
 D:\Github\AnimateGifSplitListApp\ImageProsessingApp\ImageProsessingApp\bin\Debug\ImageProcessor.dll
 D:\Github\AnimateGifSplitListApp\ImageProsessingApp\ImageProsessingApp\bin\Debug\System.Drawing.PSD.dll
+D:\Github\MyImageProsessingLibrary\ImageProsessingApp\ImageProsessingApp\bin\Debug\ImageProsessingApp.exe.config
+D:\Github\MyImageProsessingLibrary\ImageProsessingApp\ImageProsessingApp\obj\Debug\ImageProsessingApp.exe
+D:\Github\MyImageProsessingLibrary\ImageProsessingApp\ImageProsessingApp\obj\Debug\ImageProsessingApp.pdb

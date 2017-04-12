@@ -4,7 +4,7 @@
 library
 C#
 .cs
-D:\Github\AnimateGifSplitListApp\ImageProsessingApp\ImageProsessingApp.CanvasModule\obj\Debug\
+D:\Github\MyImageProsessingLibrary\ImageProsessingApp\ImageProsessingApp.CanvasModule\obj\Debug\
 ImageProsessingApp.CanvasModule
 none
 false
@@ -13,7 +13,7 @@ DEBUG;TRACE
 11823159804
 
 61735448663
-71912139288
+711705460911
 Views\ImageCanvas.xaml;
 
 False

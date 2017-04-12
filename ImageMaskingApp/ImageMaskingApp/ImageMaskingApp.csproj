@@ -130,6 +130,12 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ImageMaskingApp.Library\ImageMaskingApp.Library.csproj">
+      <Project>{63872a82-5fbf-46f7-af34-92b53ff49e8b}</Project>
+      <Name>ImageMaskingApp.Library</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

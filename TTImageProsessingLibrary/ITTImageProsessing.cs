@@ -15,7 +15,7 @@ namespace TTImageProsessingLibrary
         void MergeImage();
         void CropTransparentImage();
         void SplitGif();
-
+        void SaveLayer();
         void OnItemSelected(object[] selectedItems);
     }
 }

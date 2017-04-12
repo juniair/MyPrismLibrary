@@ -2,6 +2,7 @@
 using Prism.Unity;
 using ImageMaskingApp.Views;
 using System.Windows;
+using ImageMaskingApp.Library;
 
 namespace ImageMaskingApp
 {
@@ -15,6 +16,13 @@ namespace ImageMaskingApp
         protected override void InitializeShell()
         {
             Application.Current.MainWindow.Show();
+        }
+
+        protected override void ConfigureContainer()
+        {
+            base.ConfigureContainer();
+
+            this.RegisterTypeIfMissing(typeof(IImageMasking), typeof(ImageMaksing), true);
         }
     }
 }

@@ -4,7 +4,7 @@
 library
 C#
 .cs
-D:\Github\AnimateGifSplitListApp\ImageProsessingApp\ImageProsessingApp.FrameInfoModule\obj\Debug\
+D:\Github\MyImageProsessingLibrary\ImageProsessingApp\ImageProsessingApp.FrameInfoModule\obj\Debug\
 ImageProsessingApp.FrameInfoModule
 none
 false
@@ -13,7 +13,7 @@ DEBUG;TRACE
 11826001577
 
 6946299394
-71912139288
+711705460911
 Views\FrameInfo.xaml;
 
 False

@@ -8,6 +8,7 @@
             <Button Content="불러오기" Command="{Binding LoadImageCommand}" Margin="0,0,0,2" />
             <Button Content="불러오기(psd file)" Command="{Binding LoadImageCommand}" Margin="0,0,0,2" />
             <Button Content="저장하기" Command="{Binding SaveImageCommand}" Margin="0,0,0,20"/>
+            <Button Content="Layer를 나누어 저장하기" Command="{Binding SavePsdLayerCommand}" Margin="0,0,0,20"/>
             <Grid Margin="0,0,0,2">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="1*"/>

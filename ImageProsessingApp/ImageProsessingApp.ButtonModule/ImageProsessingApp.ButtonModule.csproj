@@ -61,7 +61,8 @@
     <Reference Include="System.Xaml">
       <RequiredTargetFramework>4.0</RequiredTargetFramework>
     </Reference>
-    <Reference Include="TTImageProsessingLibrary">
+    <Reference Include="TTImageProsessingLibrary, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\ImageProsessingApp\bin\Debug\Modules\lib\TTImageProsessingLibrary.dll</HintPath>
     </Reference>
     <Reference Include="WindowsBase" />

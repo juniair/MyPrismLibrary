@@ -1,0 +1,5 @@
+D:\Github\MyImageProsessingLibrary\ImageMaskingApp\ImageMaskingApp.Infra\bin\Debug\ImageMaskingApp.Infra.dll
+D:\Github\MyImageProsessingLibrary\ImageMaskingApp\ImageMaskingApp.Infra\bin\Debug\ImageMaskingApp.Infra.pdb
+D:\Github\MyImageProsessingLibrary\ImageMaskingApp\ImageMaskingApp.Infra\obj\Debug\ImageMaskingApp.Infra.csprojResolveAssemblyReference.cache
+D:\Github\MyImageProsessingLibrary\ImageMaskingApp\ImageMaskingApp.Infra\obj\Debug\ImageMaskingApp.Infra.dll
+D:\Github\MyImageProsessingLibrary\ImageMaskingApp\ImageMaskingApp.Infra\obj\Debug\ImageMaskingApp.Infra.pdb

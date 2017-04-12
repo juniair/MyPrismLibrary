@@ -1,8 +1,5 @@
 ﻿using Prism.Commands;
 using Prism.Mvvm;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Windows.Input;
 using TTImageProsessingLibrary;
 
@@ -14,6 +11,9 @@ namespace ImageProsessingApp.ButtonModule.ViewModels
 
         public ICommand LoadImageCommand { get; set; }
         public ICommand SaveImageCommand { get; set; }
+
+        public ICommand SavePsdLayerCommand { get; set; }
+
         public ICommand ResizeImageCommand { get; set; }
         public ICommand CropTransparentImageCommand { get; set; }
         public ICommand CropImageCommand { get; set; }
@@ -26,6 +26,7 @@ namespace ImageProsessingApp.ButtonModule.ViewModels
 
             LoadImageCommand = new DelegateCommand(() => Prosessor.LoadImage());
             SaveImageCommand = new DelegateCommand(() => Prosessor.SaveImage());
+            SavePsdLayerCommand = new DelegateCommand(() => Prosessor.SaveLayer());
             ResizeImageCommand = new DelegateCommand<object>(s => Prosessor.ResizeImage(s));
             CropImageCommand = new DelegateCommand(() => Prosessor.CropImage());
             CropTransparentImageCommand = new DelegateCommand(() => Prosessor.CropTransparentImage());

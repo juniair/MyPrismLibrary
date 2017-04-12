@@ -1,0 +1,1 @@
+D:\Github\MyImageProsessingLibrary\ImageMaskingApp\ImageMaskingApp\bin\Debug\ImageMaskingApp.exe.config

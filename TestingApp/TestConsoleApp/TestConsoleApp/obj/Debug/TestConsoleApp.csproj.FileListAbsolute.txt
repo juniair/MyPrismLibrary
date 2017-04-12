@@ -1,0 +1,11 @@
+D:\Github\AnimateGifSplitListApp\TestConsoleApp\TestConsoleApp\bin\Debug\TestConsoleApp.exe.config
+D:\Github\AnimateGifSplitListApp\TestConsoleApp\TestConsoleApp\bin\Debug\TestConsoleApp.exe
+D:\Github\AnimateGifSplitListApp\TestConsoleApp\TestConsoleApp\bin\Debug\TestConsoleApp.pdb
+D:\Github\AnimateGifSplitListApp\TestConsoleApp\TestConsoleApp\bin\Debug\ICSharpCode.SharpZipLib.dll
+D:\Github\AnimateGifSplitListApp\TestConsoleApp\TestConsoleApp\bin\Debug\MetadataExtractor.dll
+D:\Github\AnimateGifSplitListApp\TestConsoleApp\TestConsoleApp\bin\Debug\XmpCore.dll
+D:\Github\AnimateGifSplitListApp\TestConsoleApp\TestConsoleApp\bin\Debug\MetadataExtractor.xml
+D:\Github\AnimateGifSplitListApp\TestConsoleApp\TestConsoleApp\bin\Debug\XmpCore.xml
+D:\Github\AnimateGifSplitListApp\TestConsoleApp\TestConsoleApp\obj\Debug\TestConsoleApp.csprojResolveAssemblyReference.cache
+D:\Github\AnimateGifSplitListApp\TestConsoleApp\TestConsoleApp\obj\Debug\TestConsoleApp.exe
+D:\Github\AnimateGifSplitListApp\TestConsoleApp\TestConsoleApp\obj\Debug\TestConsoleApp.pdb

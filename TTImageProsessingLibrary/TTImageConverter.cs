@@ -381,11 +381,11 @@ namespace TTImageProsessingLibrary
 
         private int MaxX(Bitmap img)
         {
-            for (int x = img.Width - 1; x >= 0; x--)
+            for (int x = img.Width; x >= 0; x--)
             {
                 for (int y = 0; y < img.Height; y++)
                 {
-                    System.Drawing.Color col = img.GetPixel(x, y);
+                    System.Drawing.Color col = img.GetPixel(x-1, y);
                     if (col.A != 0)
                     {
                         return x;
@@ -397,11 +397,11 @@ namespace TTImageProsessingLibrary
 
         private int MaxY(Bitmap img)
         {
-            for (int y = img.Height - 1; y >= 0; y--)
+            for (int y = img.Height; y >= 0; y--)
             {
                 for (int x = 0; x < img.Width; x++)
                 {
-                    System.Drawing.Color col = img.GetPixel(x, y);
+                    System.Drawing.Color col = img.GetPixel(x, y-1);
                     if (col.A != 0)
                     {
                         return y;

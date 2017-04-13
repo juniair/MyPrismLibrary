@@ -17,7 +17,7 @@ using TTImageProsessingLibrary.Model;
 
 namespace TTImageProsessingLibrary
 {
-    public class TTImageProsessing : BindableBase, ITTImageProsessing
+    public class TTImageConverter : BindableBase, ITTImageConverter
     {
         #region AnimatedGIFSpit Member
         private const int UNKNOWN_LOOP_COUNT = -100;
@@ -54,7 +54,7 @@ namespace TTImageProsessingLibrary
         #endregion
 
 
-        public TTImageProsessing()
+        public TTImageConverter()
         {
             GuidToImageFormatMap = new Dictionary<Guid, ImageFormat>()
             {
@@ -142,6 +142,7 @@ namespace TTImageProsessingLibrary
         {
             Input = OpenImage();
             Bitmap img = new Bitmap(BytearrToImage(Input));
+            
             Rec = new Rectangle(0, 0, img.Width, img.Height);
             X = Rec.X;
             Y = Rec.Y;

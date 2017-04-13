@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TTImageProsessingLibrary
 {
-    public interface ITTImageProsessing
+    public interface ITTImageConverter
     {
         void LoadImage();
         void SaveImage();

@@ -412,6 +412,40 @@ namespace TTImageProsessingLibrary
         }
         #endregion
 
+        #region 유정 추가 - maskImage
+
+        public void MaskImage()
+        {
+            Image source1 = BytearrToImage(Input);
+            Image source2 = BytearrToImage(OpenImage());
+
+            ImageLayer layer1 = new ImageLayer();
+            layer1.Image = source1;
+            layer1.Opacity = 50;
+
+            using (Process = new MemoryStream())
+            {
+                var size = source1.Size;
+                Rec = new Rectangle(Rec.X, Rec.Y, size.Width, size.Height);
+                ResizeLayer resizeLayer = new ResizeLayer(size, ImageProcessor.Imaging.ResizeMode.Stretch, AnchorPosition.Center, true, null, null, null, null);
+
+                using (var imageFactory = new ImageFactory(preserveExifData: true))
+                {
+                    imageFactory.Load(source2)
+                        .Resize(resizeLayer)
+                        .Mask(layer1)
+                        .Overlay(layer1)
+                        .Save(Process);
+                }
+
+                SaveProcess();
+
+            }
+
+        }
+
+        #endregion
+
         #region SplitGIF 에서 처리 되는 메소드
         private void AnimatedImageSplit()
         {

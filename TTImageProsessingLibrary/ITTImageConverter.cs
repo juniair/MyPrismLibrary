@@ -17,5 +17,6 @@ namespace TTImageProsessingLibrary
         void SplitGif();
         void SaveLayer();
         void OnItemSelected(object[] selectedItems);
+        void MaskImage();
     }
 }

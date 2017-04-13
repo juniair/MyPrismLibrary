@@ -29,3 +29,4 @@ D:\Github\MyImageProsessingLibrary\ImageMaskingApp\ImageMaskingApp\obj\Debug\Ima
 D:\Github\MyImageProsessingLibrary\ImageMaskingApp\ImageMaskingApp\obj\Debug\ImageMaskingApp.csproj.GenerateResource.Cache
 D:\Github\MyImageProsessingLibrary\ImageMaskingApp\ImageMaskingApp\obj\Debug\ImageMaskingApp.exe
 D:\Github\MyImageProsessingLibrary\ImageMaskingApp\ImageMaskingApp\obj\Debug\ImageMaskingApp.pdb
+D:\Github\MyImageProsessingLibrary\ImageMaskingApp\ImageMaskingApp\bin\Debug\ImageProcessor.dll

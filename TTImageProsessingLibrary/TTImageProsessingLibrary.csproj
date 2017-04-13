@@ -96,7 +96,7 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ITTImageProsessing.cs" />
+    <Compile Include="ITTImageConverter.cs" />
     <Compile Include="Model\FrameFile.cs" />
     <Compile Include="Model\ImageFile.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -112,7 +112,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="TTImageProsessing.cs" />
+    <Compile Include="TTImageConverter.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>

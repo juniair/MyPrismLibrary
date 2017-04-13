@@ -4,8 +4,17 @@
              xmlns:prism="http://prismlibrary.com/"             
              prism:ViewModelLocator.AutoWireViewModel="True">
     <Grid>
-        <Image Source="{Binding }">
-            <Op
-        </Image>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="9*"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Image Source="{Binding TargetSource}" Grid.ColumnSpan="1" />
+        <Image Source="{Binding ResultSource}" Grid.Column="1" Grid.ColumnSpan="1" />
+        <Button Content="이미지 불러오기" Grid.Row="1" Grid.RowSpan="1" Grid.ColumnSpan="1" Command="{Binding LoadFileCommand}"/>
+        <Button Content="이미지 마스크" Grid.Row="1" Grid.RowSpan="1" Grid.Column="1" Grid.ColumnSpan="1" Command="{Binding MaskImageCommand}"/>
     </Grid>
 </UserControl>

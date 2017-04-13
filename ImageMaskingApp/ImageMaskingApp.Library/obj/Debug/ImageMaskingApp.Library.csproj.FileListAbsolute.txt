@@ -3,3 +3,4 @@ D:\Github\MyImageProsessingLibrary\ImageMaskingApp\ImageMaskingApp.Library\bin\D
 D:\Github\MyImageProsessingLibrary\ImageMaskingApp\ImageMaskingApp.Library\obj\Debug\ImageMaskingApp.Library.csprojResolveAssemblyReference.cache
 D:\Github\MyImageProsessingLibrary\ImageMaskingApp\ImageMaskingApp.Library\obj\Debug\ImageMaskingApp.Library.dll
 D:\Github\MyImageProsessingLibrary\ImageMaskingApp\ImageMaskingApp.Library\obj\Debug\ImageMaskingApp.Library.pdb
+D:\Github\MyImageProsessingLibrary\ImageMaskingApp\ImageMaskingApp.Library\bin\Debug\ImageProcessor.dll

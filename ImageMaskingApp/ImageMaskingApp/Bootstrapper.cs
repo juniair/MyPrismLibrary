@@ -3,6 +3,7 @@ using Prism.Unity;
 using ImageMaskingApp.Views;
 using System.Windows;
 using ImageMaskingApp.Library;
+using Prism.Modularity;
 
 namespace ImageMaskingApp
 {
@@ -23,6 +24,11 @@ namespace ImageMaskingApp
             base.ConfigureContainer();
 
             this.RegisterTypeIfMissing(typeof(IImageMasking), typeof(ImageMaksing), true);
+        }
+
+        protected override IModuleCatalog CreateModuleCatalog()
+        {
+            return new DirectoryModuleCatalog() { ModulePath = @".\Modules" };
         }
     }
 }

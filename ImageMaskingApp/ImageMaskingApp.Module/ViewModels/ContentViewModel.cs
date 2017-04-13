@@ -36,7 +36,7 @@ namespace ImageMaskingApp.Module.ViewModels
 
         public ContentViewModel()
         {
-            factory = new ImageFactory();
+            factory = new ImageFactory(preserveExifData:true);
             file = new OpenFileDialog();
             file.DefaultExt = "jpg";
             file.Filter = "이미지(*.jpg; *.jpeg; *.gif; *.bmp; *.png)|*.jpg;*.jpeg;*.gif;*.bmp;*.png;*.psd";

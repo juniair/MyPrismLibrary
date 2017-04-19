@@ -4,7 +4,79 @@
         xmlns:prism="http://prismlibrary.com/"
         prism:ViewModelLocator.AutoWireViewModel="True"
         Title="{Binding Title}" Height="350" Width="525">
+    <Window.Resources>
+        <Style x:Key="PlusSelectedToggleButton" TargetType="{x:Type Button}" BasedOn="{x:Null}">
+            <Setter Property="Width" Value="103" />
+            <Setter Property="Height" Value="24" />
+            <Setter Property="FontSize" Value="12" />
+            <Setter Property="Background" Value="#FF3498DB" />
+            <Setter Property="BorderBrush" Value="DarkGray" />
+            <Setter Property="Padding" Value="1"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border x:Name="Border" Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="1" CornerRadius="4">
+                            <ContentPresenter x:Name="ContentPresenter" RecognizesAccessKey="True"
+                                         VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                          HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+
+                                          />
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsPressed" Value="true">
+                                <Setter Property="Background" Value="Black" TargetName="Border" />
+                                <Setter Property="BorderBrush" Value="White" TargetName="Border" />
+                                <Setter Property="Foreground" Value="Black" />
+                                <Setter Property="TextBlock.Foreground" Value="Red" TargetName="ContentPresenter" />
+                            </Trigger>
+
+
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style x:Key="Button_Effect" TargetType="{x:Type Button}" BasedOn="{x:Null}">
+            <Setter Property="Width" Value="103" />
+            <Setter Property="Height" Value="24" />
+            <Setter Property="FontSize" Value="12" />
+            <Setter Property="Background" Value="Transparent" />
+            <Setter Property="Foreground" Value="#FF3D3D3D"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border Background="{TemplateBinding Background}" 
+                                BorderBrush="#FF777777" BorderThickness="1">
+                            <ContentPresenter x:Name="ContentPresenter" 
+                                              VerticalAlignment="{TemplateBinding VerticalContentAlignment}" 
+                                              HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter Property="Background" Value="#FF868686" />
+                                <Setter Property="TextBlock.Foreground" Value="White" TargetName="ContentPresenter"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+    </Window.Resources>
     <Grid>
+        <StackPanel>
+            <Button  Style="{StaticResource PlusSelectedToggleButton}" >+</Button>
+            <Button x:Name="btn_cancel" Content="Cancel" Style="{StaticResource Button_Effect}" />
+        </StackPanel>
+        
+    </Grid>
+    <!--<Grid>
         <Grid.Background>
             <DrawingBrush Viewport="0,0,16,16" ViewportUnits="Absolute" Stretch="None" TileMode="Tile" >
                 <DrawingBrush.Drawing>
@@ -30,5 +102,5 @@
             </DrawingBrush>
         </Grid.Background>
         <Button Content="PSD 레이어 분리 저장" Command="{Binding SaveCommand}" Margin="350,270,2,-1" />
-    </Grid>
+    </Grid>-->
 </Window>

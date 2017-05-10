@@ -30,3 +30,6 @@ D:\Github\AnimateGifSplitListApp\TestApp\TestApp\obj\Debug\TestApp.Properties.Re
 D:\Github\AnimateGifSplitListApp\TestApp\TestApp\obj\Debug\TestApp.csproj.GenerateResource.Cache
 D:\Github\AnimateGifSplitListApp\TestApp\TestApp\obj\Debug\TestApp.exe
 D:\Github\AnimateGifSplitListApp\TestApp\TestApp\obj\Debug\TestApp.pdb
+D:\Github\MyImageProsessingLibrary\TestingApp\TestApp\TestApp\bin\Debug\TestApp.exe.config
+D:\Github\MyImageProsessingLibrary\TestingApp\TestApp\TestApp\obj\Debug\TestApp.exe
+D:\Github\MyImageProsessingLibrary\TestingApp\TestApp\TestApp\obj\Debug\TestApp.pdb

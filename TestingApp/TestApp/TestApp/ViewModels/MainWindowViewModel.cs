@@ -3,17 +3,24 @@ using Microsoft.Win32;
 using Prism.Commands;
 using Prism.Mvvm;
 using System;
+using System.Collections.ObjectModel;
 using System.Diagnostics;
 using System.Drawing;
 using System.Drawing.PSD;
-using System.IO;
-using System.Text;
 using System.Text.RegularExpressions;
+using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media;
 
 namespace TestApp.ViewModels
 {
+
+    public class Model
+    {
+        public string Name { get; set; }
+    }
+
+
     public class MainWindowViewModel : BindableBase
     {
         private string title = "Test App";
@@ -23,11 +30,32 @@ namespace TestApp.ViewModels
             set { SetProperty(ref title, value); }
         }
 
+        public ICommand ChangeColorCommand { get; set; }
+
+        private System.Windows.Media.Brush color;
+        public System.Windows.Media.Brush LabelColor
+        {
+            get { return color; }
+            set { SetProperty(ref color, value); }
+        }
+
+
+
+        private ObservableCollection<TabItem> tabs;
+        public ObservableCollection<TabItem> Tabs
+        {
+            get { return tabs; }
+            set { SetProperty(ref tabs, value); }
+        }
+
         public ICommand SaveCommand { get; private set; }
 
         public MainWindowViewModel()
         {
-            SaveCommand = new DelegateCommand(run);
+            string s = System.IO.Path.GetFileNameWithoutExtension("Asd");
+            Tabs = new ObservableCollection<TabItem>();
+            Tabs.Add(new TabItem { Header = s, Content = "One's content" });
+            Tabs.Add(new TabItem { Header = "Two", Content = "Two's content" });
         }
 
         private void run()

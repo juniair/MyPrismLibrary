@@ -62,3 +62,7 @@ D:\Github\MyImageProsessingLibrary\TestingApp\TestApp\TestApp\obj\Debug\TestApp_
 D:\Github\MyImageProsessingLibrary\TestingApp\TestApp\TestApp\obj\Debug\TestApp.g.resources
 D:\Github\MyImageProsessingLibrary\TestingApp\TestApp\TestApp\obj\Debug\TestApp.Properties.Resources.resources
 D:\Github\MyImageProsessingLibrary\TestingApp\TestApp\TestApp\obj\Debug\TestApp.csproj.GenerateResource.Cache
+D:\Github\MyImageProsessingLibrary\TestingApp\TestApp\TestApp\obj\Debug\Views\TextView.baml
+D:\Github\MyImageProsessingLibrary\TestingApp\TestApp\TestApp\obj\Debug\Views\TextView.g.cs
+D:\Github\MyImageProsessingLibrary\TestingApp\TestApp\TestApp\obj\Debug\GeneratedInternalTypeHelper.g.cs
+D:\Github\MyImageProsessingLibrary\TestingApp\TestApp\TestApp\obj\Debug\TestApp_MarkupCompile.lref

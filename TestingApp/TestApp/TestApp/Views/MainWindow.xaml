@@ -1,80 +1,62 @@
 ﻿<Window x:Class="TestApp.Views.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:TestApp.Views"
+        xmlns:localvm="clr-namespace:TestApp.ViewModels"
         xmlns:prism="http://prismlibrary.com/"
         prism:ViewModelLocator.AutoWireViewModel="True"
-        Title="{Binding Title}" Height="350" Width="525">
+        Title="{Binding Title}"  Width="750" Height="528">
     <Window.Resources>
-        <Style x:Key="PlusSelectedToggleButton" TargetType="{x:Type Button}" BasedOn="{x:Null}">
-            <Setter Property="Width" Value="103" />
-            <Setter Property="Height" Value="24" />
-            <Setter Property="FontSize" Value="12" />
-            <Setter Property="Background" Value="#FF3498DB" />
-            <Setter Property="BorderBrush" Value="DarkGray" />
-            <Setter Property="Padding" Value="1"/>
-            <Setter Property="VerticalContentAlignment" Value="Center"/>
-            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+        <SolidColorBrush x:Key="RedBrush" Color="Red"/>
+
+        <SolidColorBrush x:Key="SolidBorderBrush" Color="#888" />
+
+        <SolidColorBrush x:Key="GreenBrush" Color="Green" />
+
+        <SolidColorBrush x:Key="DisabledBackgroundBrush" Color="#EEE" />
+
+        <SolidColorBrush x:Key="DisabledBorderBrush" Color="#AAA" />
+
+        <SolidColorBrush x:Key="DisabledForegroundBrush" Color="#888" />
+
+        <Style TargetType="{x:Type TabItem}">
             <Setter Property="Template">
                 <Setter.Value>
-                    <ControlTemplate TargetType="{x:Type Button}">
-                        <Border x:Name="Border" Background="{TemplateBinding Background}"
-                            BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="1" CornerRadius="4">
-                            <ContentPresenter x:Name="ContentPresenter" RecognizesAccessKey="True"
-                                         VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
-                                          HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
-
-                                          />
-                        </Border>
+                    <ControlTemplate TargetType="{x:Type TabItem}">
+                        <Grid>
+                            <Border 
+                                Name="Border"
+                                Margin="0,0,-4,0" 
+                                Background="{StaticResource RedBrush}"
+                                BorderBrush="{StaticResource  SolidBorderBrush}" 
+                                BorderThickness="1,1,1,1" 
+                                CornerRadius="2,12,0,0" >
+                                <ContentPresenter x:Name="ContentSite"
+                                    VerticalAlignment="Center"
+                                    HorizontalAlignment="Center"
+                                    ContentSource="Header"
+                                    Margin="12,2,12,2"
+                                    RecognizesAccessKey="True"/>
+                            </Border>
+                        </Grid>
                         <ControlTemplate.Triggers>
-                            <Trigger Property="IsPressed" Value="true">
-                                <Setter Property="Background" Value="Black" TargetName="Border" />
-                                <Setter Property="BorderBrush" Value="White" TargetName="Border" />
-                                <Setter Property="Foreground" Value="Black" />
-                                <Setter Property="TextBlock.Foreground" Value="Red" TargetName="ContentPresenter" />
+                            <Trigger Property="IsSelected" Value="True">
+                                <Setter Property="Panel.ZIndex" Value="100" />
+                                <Setter TargetName="Border" Property="Background" Value="{StaticResource GreenBrush}" />
+                                <Setter TargetName="Border" Property="BorderThickness" Value="1,1,1,0" />
                             </Trigger>
-
 
                         </ControlTemplate.Triggers>
                     </ControlTemplate>
                 </Setter.Value>
             </Setter>
         </Style>
-
-        <Style x:Key="Button_Effect" TargetType="{x:Type Button}" BasedOn="{x:Null}">
-            <Setter Property="Width" Value="103" />
-            <Setter Property="Height" Value="24" />
-            <Setter Property="FontSize" Value="12" />
-            <Setter Property="Background" Value="Transparent" />
-            <Setter Property="Foreground" Value="#FF3D3D3D"/>
-            <Setter Property="VerticalContentAlignment" Value="Center"/>
-            <Setter Property="HorizontalContentAlignment" Value="Center"/>
-            <Setter Property="Template">
-                <Setter.Value>
-                    <ControlTemplate TargetType="{x:Type Button}">
-                        <Border Background="{TemplateBinding Background}" 
-                                BorderBrush="#FF777777" BorderThickness="1">
-                            <ContentPresenter x:Name="ContentPresenter" 
-                                              VerticalAlignment="{TemplateBinding VerticalContentAlignment}" 
-                                              HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"/>
-                        </Border>
-                        <ControlTemplate.Triggers>
-                            <Trigger Property="IsPressed" Value="True">
-                                <Setter Property="Background" Value="#FF868686" />
-                                <Setter Property="TextBlock.Foreground" Value="White" TargetName="ContentPresenter"/>
-                            </Trigger>
-                        </ControlTemplate.Triggers>
-                    </ControlTemplate>
-                </Setter.Value>
-            </Setter>
-        </Style>
-
     </Window.Resources>
     <Grid>
-        <StackPanel>
-            <Button  Style="{StaticResource PlusSelectedToggleButton}" >+</Button>
-            <Button x:Name="btn_cancel" Content="Cancel" Style="{StaticResource Button_Effect}" />
-        </StackPanel>
-        
+        <TabControl>
+            <TabItem Header="MyTabItem" />
+            <TabItem Header="MyTabItem"  />
+        </TabControl>
     </Grid>
     <!--<Grid>
         <Grid.Background>

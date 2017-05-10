@@ -1,0 +1,27 @@
+﻿<UserControl x:Class="TestApp.Views.TextView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:prism="http://prismlibrary.com/"             
+             >
+    <Grid >
+        <Border Margin="5" Background="White">
+            <StackPanel>
+                <Border BorderBrush="Black" BorderThickness="1,1,1,0" Width="90" Height="60">
+                    <Image Source="{Binding Source}"/>
+                </Border>
+                <Border Grid.Row="1" BorderBrush="Black" BorderThickness="1,1,1,1" Width="90" Height="30">
+                    <StackPanel>
+                        <Grid Height="15">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition />
+                                <ColumnDefinition />
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Text="프레임 이름" FontSize="8"/>
+                            <TextBox Grid.Column="1" FontSize="8" Text="{Binding Name}"/>
+                        </Grid>
+                    </StackPanel>
+                </Border>
+            </StackPanel>
+        </Border>
+    </Grid>
+</UserControl>
